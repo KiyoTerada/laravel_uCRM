@@ -1,8 +1,8 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, router } from '@inertiajs/vue3'; // router追加
 import { reactive } from 'vue';
-import { Inertia } from '@inertiajs/inertia';
+// import { Inertia } from '@inertiajs/inertia'; コメントアウト
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
 
 const props = defineProps({
@@ -19,7 +19,8 @@ const form = reactive({
 });
 
 const updateItem = id => {
-    Inertia.put(route('items.update', { item: id }), form);
+    // Inertia.put(route('items.update', { item: id }), form); コメントアウト
+    router.put(route('items.update', { item: id }), form); // routerでアクセスできる
 }
 </script>
 
