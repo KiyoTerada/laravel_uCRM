@@ -24,6 +24,6 @@ class Purchase extends Model
     public function items()
     {
         return $this->belongsToMany(Item::class)
-        ->withPivot('quantiry');
+        ->withPivot('quantity');
     }
 }
