@@ -97,5 +97,7 @@ class DecileService
         $totals = $data->pluck('totalPerGroup');
 
         return [$data, $labels, $totals];
+
+        // dd($data);
     }
 }
